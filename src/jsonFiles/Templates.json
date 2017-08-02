@@ -1,0 +1,18 @@
+[
+  {
+    "name": "CheckIn",
+    "message": "Thanks for checking in {{guest.name}}"
+  },
+  {
+    "name": "CheckOut",
+    "message": "Thanks for checking out {{guest.name}}"
+  },
+  {
+    "name": "Needs",
+    "message": "Do you need anything? {{guest.name}}"
+  },
+  {
+    "name": "Breakfast",
+    "message": "Breakfast? {{guest.name}}"
+  }
+]
