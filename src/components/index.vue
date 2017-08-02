@@ -4,35 +4,28 @@
         <div class="chooseTemplate">
             <h2>What template would you like to use?</h2>
             <div v-for="template in templates">
-                <input type="radio" :id="template.name" :value="template.name" v-model="thisShit" v-on:click="fire">
+                <input type="radio" :id="template.name" :value="template.name" v-model="pickedTemplate" v-on:click="fire">
                 <label :for="template.name">{{template.message}}</label>
             </div>
-            <span>Picked: {{ thisShit }}</span>
+            <span>Picked: {{ pickedTemplate }}</span>
         </div>
-
-
-
-
-
-
-
         <div class="chooseGuest">
             <h2>Choose a guest</h2>
-            <ul>
-                <li v-for="guest in guests">
-                    <button type="radio"></button>
-                    {{guest.firstName}}
-                </li>
-            </ul>
+            <div v-for="guest in guests">
+                <input type="radio" :id="guest.firstName" :value="guest.firstName" v-model="pickedGuest">
+                <label :for="guest.firstName">{{guest.firstName}}</label>
+            </div>
+            <span>Picked: {{ pickedGuest }}</span>
         </div>
+
+
         <div class="chooseHotel">
             <h2>Choose your hotel</h2>
-            <ul>
-                <li v-for="company in companies">
-                    <button type="radio"></button>
-                    {{company.company}}
-                </li>
-            </ul>
+            <div v-for="company in companies">
+                <input type="radio" :id="company.company" :value="company.company" v-model="pickedHotel">
+                <label :for="company.company">{{company.company}}</label>
+            </div>
+            <span>Picked: {{ pickedHotel }}</span>
         </div>
         <div class="finalMessage">
             <h2>Here is your final message</h2>
@@ -51,7 +44,9 @@ export default {
   props: ['guests', 'companies', 'templates'],
   data() {
       return{
-          thisShit: '',
+          pickedTemplate: '',
+          pickedGuest: '',
+          pickedHotel: '',
       }
   },
   methods: {
