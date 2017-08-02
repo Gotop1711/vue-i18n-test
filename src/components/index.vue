@@ -4,11 +4,12 @@
         <div class="chooseTemplate">
             <h2>What template would you like to use?</h2>
             <div v-for="template in templates">
-                <input type="radio" :id="template.name" :value="template.name" v-model="pickedTemplate" v-on:click="fire">
+                <input type="radio" :id="template.name" v-bind:value="template.name" v-model="pickedTemplate">
                 <label :for="template.name">{{template.message}}</label>
             </div>
             <span>Picked: {{ pickedTemplate }}</span>
         </div>
+
         <div class="chooseGuest">
             <h2>Choose a guest</h2>
             <div v-for="guest in guests">
@@ -18,7 +19,6 @@
             <span>Picked: {{ pickedGuest }}</span>
         </div>
 
-
         <div class="chooseHotel">
             <h2>Choose your hotel</h2>
             <div v-for="company in companies">
@@ -27,10 +27,16 @@
             </div>
             <span>Picked: {{ pickedHotel }}</span>
         </div>
+
         <div class="finalMessage">
             <h2>Here is your final message</h2>
+            <div v-if="this.pickedHotel && this.pickedGuest && this.pickedTemplate">
+            {{this.pickedTemplate}} {{this.pickedGuest}} {{this.pickedHotel}}
+            </div>
+            <div v-else>Finish picking</div>
+            
             <div class="displayMsg"></div>
-            <button class="sendMsg">Send</button>
+            <button class="sendMsg" v-on:click="fire">Send</button>
             <button class="editMsg">Edit</button>
             <button class="cancelMsg">Cancel</button>
         </div>
@@ -51,7 +57,7 @@ export default {
   },
   methods: {
       fire(){
-          console.log(this, this.name);
+          console.log(this.pickedTemplate, this.pickedGuest, this.pickedHotel);
       }
   }
 }
