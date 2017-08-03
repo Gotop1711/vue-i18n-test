@@ -7,7 +7,6 @@
                 <input type="radio" :id="template.name" v-bind:value="template.message" v-model="pickedTemplate">
                 <label :for="template.name">{{template.message}}</label>
             </div>
-            <span>Picked: {{ pickedTemplate }}</span>
         </div>
 
         <div class="chooseGuest">
@@ -16,7 +15,6 @@
                 <input type="radio" :id="guest.firstName" :value="guest.firstName" v-model="pickedGuest">
                 <label :for="guest.firstName">{{guest.firstName}}</label>
             </div>
-            <span>Picked: {{ pickedGuest }}</span>
         </div>
 
         <div class="chooseHotel">
@@ -25,7 +23,6 @@
                 <input type="radio" :id="company.company" :value="company.company" v-model="pickedHotel">
                 <label :for="company.company">{{company.company}}</label>
             </div>
-            <span>Picked: {{ pickedHotel }}</span>
         </div>
 
         <div class="finalMessage">
@@ -38,9 +35,9 @@
             <div v-else>Finish picking</div>
             
             <div class="displayMsg"></div>
-            <button class="sendMsg" v-on:click="fire">Send</button>
-            <button class="editMsg">Edit</button>
-            <button class="cancelMsg">Cancel</button>
+            <button class="sendMsg" v-on:click="send">Send</button>
+            <button class="editMsg" v-on:click="edit">Edit</button>
+            <button class="cancelMsg" v-on:click="cancel">Cancel</button>
         </div>
     </div>
 </template>
@@ -61,6 +58,17 @@ export default {
   methods: {
       fire(){
           console.log(this.pickedTemplate, this.pickedGuest, this.pickedHotel);
+      },
+      cancel(){
+          this.pickedTemplate = '',
+          this.pickedGuest = '',
+          this.pickedHotel = ''
+      },
+      send(){
+          console.log("send")
+      },
+      edit(){
+          console.log("edit")
       }
   },
   created(){
