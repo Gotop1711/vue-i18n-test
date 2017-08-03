@@ -4,7 +4,7 @@
         <div class="chooseTemplate">
             <h2>What template would you like to use?</h2>
             <div v-for="template in templates">
-                <input type="radio" :id="template.name" v-bind:value="template.name" v-model="pickedTemplate">
+                <input type="radio" :id="template.name" v-bind:value="template.message" v-model="pickedTemplate">
                 <label :for="template.name">{{template.message}}</label>
             </div>
             <span>Picked: {{ pickedTemplate }}</span>
@@ -31,7 +31,9 @@
         <div class="finalMessage">
             <h2>Here is your final message</h2>
             <div v-if="this.pickedHotel && this.pickedGuest && this.pickedTemplate">
-            {{this.pickedTemplate}} {{this.pickedGuest}} {{this.pickedHotel}}
+            Good {{this.timeOfDay}} {{this.pickedGuest}},
+            <br/>
+            This is a message from your friendly staff at {{this.pickedHotel}} :) {{this.pickedTemplate}}
             </div>
             <div v-else>Finish picking</div>
             
@@ -53,13 +55,31 @@ export default {
           pickedTemplate: '',
           pickedGuest: '',
           pickedHotel: '',
+          timeOfDay: '',
       }
   },
   methods: {
       fire(){
           console.log(this.pickedTemplate, this.pickedGuest, this.pickedHotel);
       }
+  },
+  created(){
+    var d = new Date();
+    d.getHours();
+    d.getMinutes(); 
+    d.getSeconds();
+    console.log(d)
+    console.log(d.getHours())
+    if(d.getHours > 0 && d.getHours < 12){
+        this.timeOfDay = 'morning'
+    }else if(d.getHours > 12 && d.getHours < 17){
+        this.timeOfDay = 'afternoon'
+    }else{
+        this.timeOfDay = 'evening'
+    }
+    console.log(this.timeOfDay)
   }
+
 }
 </script>
 

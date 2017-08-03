@@ -1,18 +1,18 @@
 [
   {
     "name": "CheckIn",
-    "message": "Thanks for checking in {{guest.name}}"
+    "message": "We hope check-in was awesome. Please let us know if there's anything else we can do for you to make your stay super sweet."
   },
   {
     "name": "CheckOut",
-    "message": "Thanks for checking out {{guest.name}}"
+    "message": "Just a reminder, checkout is at noon today. If you would like to stay longer, just let us know!"
   },
   {
     "name": "Needs",
-    "message": "Do you need anything? {{guest.name}}"
+    "message": "Just checking in to see if there's anything you need."
   },
   {
     "name": "Breakfast",
-    "message": "Breakfast? {{guest.name}}"
+    "message": "Wakey wakey! Would you like any breakfast?"
   }
 ]
