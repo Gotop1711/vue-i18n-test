@@ -2,7 +2,7 @@
     <div class="text-compose">
         <h1>Hello!</h1>
         <div class="chooseTemplate">
-            <h2>What template would you like to use?</h2>
+            <h2>Please choose a template:</h2>
             <div v-for="template in templates">
                 <input type="radio" :id="template.name" v-bind:value="template.message" v-model="pickedTemplate">
                 <label :for="template.name">{{template.message}}</label>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="chooseGuest">
-            <h2>Choose a guest</h2>
+            <h2>Please choose a guest:</h2>
             <div v-for="guest in guests">
                 <input type="radio" :id="guest.firstName" :value="guest.firstName" v-model="pickedGuest">
                 <label :for="guest.firstName">{{guest.firstName}}</label>
@@ -18,21 +18,34 @@
         </div>
 
         <div class="chooseHotel">
-            <h2>Choose your hotel</h2>
+            <h2>Please choose a hotel:</h2>
             <div v-for="company in companies">
                 <input type="radio" :id="company.company" :value="company.company" v-model="pickedHotel">
                 <label :for="company.company">{{company.company}}</label>
             </div>
         </div>
 
+        <button v-on:click="create">Create your message</button>
+
+
         <div class="finalMessage">
-            <h2>Here is your final message</h2>
-            <div v-if="this.pickedHotel && this.pickedGuest && this.pickedTemplate">
-            Good {{this.timeOfDay}} {{this.pickedGuest}},
-            <br/>
-            This is a message from your friendly staff at {{this.pickedHotel}} :) {{this.pickedTemplate}}
-            </div>
-            <div v-else>Finish picking</div>
+            <h2>Here is your final message:</h2>
+            <div class="messageWrapper">
+                <div v-show="!isEditing">
+                    {{this.finalMsg}}
+                </div>
+                
+                <div v-show="isEditing">
+                    <div class='ui form'>
+                        <div class='field'>
+                            <input class="field" type='text' v-model='finalMsg' v-bind="this.finalMsg">
+                        </div>
+                        <button class='ui basic blue button' v-on:click='hideForm'>
+                            Close X
+                        </button>
+                        </div>
+                    </div>
+                </div>
             
             <div class="displayMsg"></div>
             <button class="sendMsg" v-on:click="send">Send</button>
@@ -53,6 +66,8 @@ export default {
           pickedGuest: '',
           pickedHotel: '',
           timeOfDay: '',
+          finalMsg: '',
+          isEditing: false,
       }
   },
   methods: {
@@ -66,10 +81,19 @@ export default {
       },
       send(){
           console.log("send")
+          alert("Congrats! You sent send the following message: " + this.finalMsg)
       },
       edit(){
+          this.isEditing = true;
           console.log("edit")
-      }
+      },
+      hideForm() {
+        this.isEditing = false;
+        console.log(this.finalMsg)
+    },
+    create(){
+        this.finalMsg = "Good " + this.timeOfDay + " " + this.pickedGuest + ", This is a message from your friendly staff at " + this.pickedHotel + " :)" + this.pickedTemplate
+    }
   },
   created(){
     var d = new Date();
@@ -91,7 +115,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;
@@ -109,5 +132,10 @@ li {
 
 a {
   color: #42b983;
+}
+
+.field{
+    height: 200px;
+    width: 400px;
 }
 </style>

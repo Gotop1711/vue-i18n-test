@@ -33,8 +33,9 @@ export default {
 </script>
 
 <style>
-#app {
-
+body{
+  padding: 0;
+  margin: 0;
 }
 
 .header {
