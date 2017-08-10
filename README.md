@@ -15,4 +15,4 @@ npm run build --report
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-
+This is my attempt to do some translation work with Vue and an additional component called Vue-i18n. It's hard-coded to assume the browser language is Deutsch.
