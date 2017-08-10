@@ -1,0 +1,33 @@
+{
+	"global":{
+		"good": "guten",
+		"morning": "Morgen",
+		"afternoon": "Nachmittag",
+		"evening": "Abend",
+		"send": "Senden",
+		"edit": "bearbeiten",
+		"cancel": "stornieren",
+		"saveEdits": "Speichern Sie Bearbeitungen",
+		"cancelEdits": "Abbrechen beenden",
+		"congrats": "Glückwünsche! Sie haben folgende Nachricht gesendet: "
+	},
+	"main":{
+		"title": "Wählen Sie unten, um eine benutzerdefinierte Nachricht für Ihre Gäste zu erstellen",
+		"subTitle": "Oder du kannst direkt zur 'edit' Taste gehen, um deine eigene Nachricht zu erstellen",
+		"create": "Erstellen Sie Ihre Nachricht",
+		"finalMsg": "Hier ist deine letzte Nachricht",
+		"friendlyMsg": "Dies ist eine Nachricht von Ihrem freundlichen Personal an",
+		"alert": "Bitte treffen Sie eine Auswahl für alle Optionen"
+	},
+	"choose":{
+		"template": "Bitte wählen Sie eine Vorlage",
+		"guest": "Bitte wählen Sie einen Gast",
+		"hotel": "Bitte wählen Sie ein Hotel"
+	},
+	"templates":[
+		{"id": "checkIn", "name": "Check In", "message": "Wir hoffen, dass der Check-In war super. Bitte lassen Sie uns wissen, ob es noch etwas gibt, was wir für Sie tun können, um Ihren Aufenthalt super süß zu machen."},
+		{"id": "checkOut", "name": "Auschecken", "message": "Nur eine Erinnerung, Kasse ist heute Mittag. Wenn du länger bleiben möchtest, lass es uns wissen!"},
+		{"id": "general", "name": "Allgemeine Prüfung", "message": "Nur einchecken, um zu sehen, ob es etwas gibt, was Sie brauchen."},
+		{"id": "breakfast", "name": "Frühstück", "message": "Aufwachen! Möchtest du ein Frühstück?"}
+	]
+}

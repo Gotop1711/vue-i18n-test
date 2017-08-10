@@ -1,0 +1,33 @@
+{
+	"global":{
+		"good": "Good",
+		"morning": "morning",
+		"afternoon": "afternoon",
+		"evening": "evening",
+		"send": "Send",
+		"edit": "Edit",
+		"cancel": "Cancel",
+		"saveEdits": "Save Edits",
+		"cancelEdits": "Cancel Edits",
+		"congrats": "Congrats! You sent the following message: "
+	},
+	"main":{
+		"title": "Make selections below to create a customized message for your guests",
+		"subTitle": "Or you can go straight to the 'edit' button to create your own message",
+		"create": "Create your message",
+		"finalMsg": "Here is your final message",
+		"friendlyMsg": "This is a message from your friendly staff at",
+		"alert": "Please make a selection for all options"
+	},
+	"choose":{
+		"template": "Please choose a template",
+		"guest": "Please choose a guest",
+		"hotel": "Please choose a hotel"
+	},
+	"templates":[
+		{"id": "checkIn", "name": "Check In", "message": "We hope check-in was awesome. Please let us know if there's anything else we can do for you to make your stay super sweet."},
+		{"id": "checkOut", "name": "Check Out", "message": "Just a reminder, checkout is at noon today. If you would like to stay longer, just let us know!"},
+		{"id": "general", "name": "General Check", "message": "Just checking in to see if there's anything you need."},
+		{"id": "breakfast", "name": "Breakfast", "message": "Wakey wakey! Would you like any breakfast?"}
+	]
+}

@@ -1,32 +1,22 @@
 [
   {
     "id": 1,
-    "company": "Hotel California",
-    "city": "Santa Barbara",
-    "timezone": "US/Western"
+    "company": "Radisson"
   },
   {
     "id": 2,
-    "company": "The Grand Budapest Hotel",
-    "city": "Republic of Zubrowka",
-    "timezone": "US/Central"
+    "company": "Holiday Inn"
   },
   {
     "id": 3,
-    "company": "The Heartbreak Hotel",
-    "city": "Graceland",
-    "timezone": "US/Central"
+    "company": "The W"
   },
   {
     "id": 4,
-    "company": "The Prancing Pony",
-    "city": "Bree",
-    "timezone": "US/Central"
+    "company": "The Ritz Carlton"
   },
   {
     "id": 5,
-    "company": "The Fawlty Towers",
-    "city": "Torquay",
-    "timezone": "US/Eastern"
+    "company": "The Days Inn"
   }
 ]
