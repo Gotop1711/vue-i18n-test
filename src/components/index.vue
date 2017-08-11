@@ -1,6 +1,6 @@
 <template>
     <div class="text-compose">
-        <h1>{{ $t("message.global.good") }} {{this.timeOfDay}}!</h1>
+        <h1>{{ this.good }} {{this.timeOfDay}}!</h1>
         <h2>{{ $t("message.main.title") }}.<br/>{{ $t("message.main.subTitle") }}.</h2>
 
         <div class="chooseWrapper">
